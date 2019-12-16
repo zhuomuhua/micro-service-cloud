@@ -1,0 +1,40 @@
+server:
+  port: 8005
+spring:
+  application:
+    name: micro-service-admin-web
+  security:
+    user:
+      name: dabai
+      password: dabai2019
+  boot:
+    admin:
+      ui:
+        title: "应用监控管理"
+      turbine:
+        location: micro-service-turbine
+      probed-endpoints: env,metrics,trace,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,activiti,hystrix.stream,turbine.stream
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 20
+    instance-id: micro-service-admin-web
+  client:
+    security:
+      basic:
+        username: dabai
+        password: dabai2019
+    service-url:
+      defaultZone: http://${eureka.client.security.basic.username}:${eureka.client.security.basic.password}@localhost:8000/eureka
+    registry-fetch-interval-seconds: 5 # 提高Client端拉取Server的注册信息的频率
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS

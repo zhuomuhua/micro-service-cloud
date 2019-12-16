@@ -1,0 +1,5 @@
+com\dabai\springcloud\core\bean\config\FeignConfiguration.class
+com\dabai\springcloud\core\vo\DeptVO$DeptVOBuilder.class
+com\dabai\springcloud\core\bean\interceptor\FeignBasicAuthRequestInterceptor.class
+com\dabai\springcloud\core\vo\DeptVO.class
+com\dabai\springcloud\core\bean\config\RestTemplateConfiguration.class

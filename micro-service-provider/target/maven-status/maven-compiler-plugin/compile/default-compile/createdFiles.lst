@@ -1,0 +1,4 @@
+com\dabai\springcloud\provider\controller\DeptProviderController.class
+com\dabai\springcloud\provider\MicroServiceProviderApplication.class
+com\dabai\springcloud\provider\model\Dept$DeptBuilder.class
+com\dabai\springcloud\provider\model\Dept.class

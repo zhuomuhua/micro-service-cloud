@@ -2,10 +2,9 @@ package com.dabai.springcloud.provider.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.dabai.springcloud.provider.model.Dept;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.dabai.springcloud.provider.service.MicroExtendService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author zhuhaolin
@@ -16,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/provider")
 public class DeptProviderController {
+    @Autowired
+    private MicroExtendService microExtendService;
     /**
      * 获取部门信息
      *
@@ -25,5 +26,10 @@ public class DeptProviderController {
     @GetMapping("/dept/{id}")
     public String get(@PathVariable String id) {
         return JSONObject.toJSONString(Dept.builder().id(id).name("zhuhaolin").build());
+    }
+
+    @GetMapping("/extend/{id}/{age}")
+    public String update(@PathVariable String id, @PathVariable Integer age) {
+        return microExtendService.update(id, age);
     }
 }

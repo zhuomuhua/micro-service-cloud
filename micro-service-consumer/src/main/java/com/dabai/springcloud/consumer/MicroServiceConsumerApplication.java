@@ -1,5 +1,6 @@
 package com.dabai.springcloud.consumer;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
@@ -13,6 +14,7 @@ import org.springframework.context.annotation.ComponentScan;
  * @description TODO
  * @date 2019-12-08 14:34
  **/
+@MapperScan("com.dabai.springcloud.consumer.mapper")
 @EnableHystrix
 @EnableFeignClients
 @EnableEurekaClient

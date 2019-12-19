@@ -1,5 +1,6 @@
 package com.dabai.springcloud.provider;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
@@ -13,6 +14,7 @@ import org.springframework.context.annotation.ComponentScan;
  **/
 @EnableEurekaClient
 @SpringBootApplication
+@MapperScan("com.dabai.springcloud.provider.mapper")
 @ComponentScan(basePackages = {"com.dabai.springcloud.provider", "com.dabai.springcloud.core"})
 public class MicroServiceProviderApplication {
     public static void main(String[] args) {

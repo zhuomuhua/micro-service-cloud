@@ -1,6 +1,6 @@
 package com.dabai.springcloud.consumer.feign.factory;
 
-import com.dabai.springcloud.consumer.feign.DeptConsumerService;
+import com.dabai.springcloud.consumer.feign.DeptConsumerClient;
 import feign.hystrix.FallbackFactory;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -13,10 +13,10 @@ import org.springframework.stereotype.Component;
  **/
 @Slf4j
 @Component
-public class DeptConsumerServiceFallbackFactory implements FallbackFactory<DeptConsumerService> {
+public class DeptConsumerServiceFallbackFactory implements FallbackFactory<DeptConsumerClient> {
     @Override
-    public DeptConsumerService create(Throwable throwable) {
-        return new DeptConsumerService() {
+    public DeptConsumerClient create(Throwable throwable) {
+        return new DeptConsumerClient() {
             @Override
             public String get(String id) {
                 log.error("调用{}异常:{}", "get", id);

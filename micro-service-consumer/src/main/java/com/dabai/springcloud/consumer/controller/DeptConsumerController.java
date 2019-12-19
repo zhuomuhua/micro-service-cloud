@@ -1,12 +1,10 @@
 package com.dabai.springcloud.consumer.controller;
 
-import com.dabai.springcloud.consumer.feign.DeptConsumerService;
+import com.dabai.springcloud.consumer.feign.DeptConsumerClient;
+import com.dabai.springcloud.consumer.service.MicroUserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 /**
@@ -22,7 +20,10 @@ public class DeptConsumerController {
     @Autowired
     private RestTemplate restTemplate;
     @Autowired
-    private DeptConsumerService deptConsumerService;
+    private DeptConsumerClient deptConsumerClient;
+
+    @Autowired
+    private MicroUserService microUserService;
 
     @GetMapping("/dept/{id}")
     public String get(@PathVariable String id) {
@@ -33,7 +34,12 @@ public class DeptConsumerController {
 
     @GetMapping("/feign/dept/{id}")
     public String getDept(@PathVariable String id) {
-        String deptVO = deptConsumerService.get(id);
+        String deptVO = deptConsumerClient.get(id);
         return deptVO;
+    }
+
+    @PatchMapping("/user/{id}/{name}/{age}")
+    public String update(@PathVariable String id, @PathVariable String name, @PathVariable Integer age) {
+        return microUserService.update(id, name, age);
     }
 }

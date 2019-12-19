@@ -1,0 +1,30 @@
+server:
+  port: 8004
+
+spring:
+  application:
+    name: micro-service-provider
+  profiles:
+    active: dev
+  cloud:
+    config:
+      fail-fast: true
+      discovery:
+        enabled: true
+        service-id: micro-service-config
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 20
+    instance-id: micro-service-provider
+  client:
+    security:
+      basic:
+        username: dabai
+        password: dabai2019
+    service-url:
+      defaultZone: http://${eureka.client.security.basic.username}:${eureka.client.security.basic.password}@localhost:8000/eureka
+    registry-fetch-interval-seconds: 5 # 提高Client端拉取Server的注册信息的频率
+

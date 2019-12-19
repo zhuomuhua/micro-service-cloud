@@ -11,6 +11,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  * @description TODO
  * @date 2019-12-15 21:52
  **/
+
 @EnableEurekaClient
 @EnableAdminServer
 @SpringBootApplication

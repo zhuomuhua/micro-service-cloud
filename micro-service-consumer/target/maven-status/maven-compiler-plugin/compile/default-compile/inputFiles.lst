@@ -1,6 +1,0 @@
-F:\micro-service-cloud\micro-service-consumer\src\main\java\com\dabai\springcloud\consumer\config\HystrixConfiguration.java
-F:\micro-service-cloud\micro-service-consumer\src\main\java\com\dabai\springcloud\consumer\MicroServiceConsumerApplication.java
-F:\micro-service-cloud\micro-service-consumer\src\main\java\com\dabai\springcloud\consumer\feign\DeptConsumerService.java
-F:\micro-service-cloud\micro-service-consumer\src\main\java\com\dabai\springcloud\consumer\feign\factory\DeptConsumerServiceFallbackFactory.java
-F:\micro-service-cloud\micro-service-consumer\src\main\java\com\dabai\springcloud\consumer\feign\fallback\DeptConsumerServiceImpl.java
-F:\micro-service-cloud\micro-service-consumer\src\main\java\com\dabai\springcloud\consumer\controller\DeptConsumerController.java

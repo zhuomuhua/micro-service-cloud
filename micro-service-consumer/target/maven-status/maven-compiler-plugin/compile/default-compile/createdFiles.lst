@@ -1,7 +1,0 @@
-com\dabai\springcloud\consumer\feign\factory\DeptConsumerServiceFallbackFactory$1.class
-com\dabai\springcloud\consumer\feign\fallback\DeptConsumerServiceImpl.class
-com\dabai\springcloud\consumer\config\HystrixConfiguration.class
-com\dabai\springcloud\consumer\feign\factory\DeptConsumerServiceFallbackFactory.class
-com\dabai\springcloud\consumer\MicroServiceConsumerApplication.class
-com\dabai\springcloud\consumer\controller\DeptConsumerController.class
-com\dabai\springcloud\consumer\feign\DeptConsumerService.class

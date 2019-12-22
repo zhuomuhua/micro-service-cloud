@@ -15,6 +15,7 @@ import org.springframework.context.annotation.ComponentScan;
 @EnableEurekaClient
 @SpringBootApplication
 @MapperScan("com.dabai.springcloud.provider.mapper")
+//@ComponentScan(basePackages = {"com.dabai.springcloud.provider", "com.dabai.springcloud.core", "org.dromara.hmily"})
 @ComponentScan(basePackages = {"com.dabai.springcloud.provider", "com.dabai.springcloud.core"})
 public class MicroServiceProviderApplication {
     public static void main(String[] args) {

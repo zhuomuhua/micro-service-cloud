@@ -30,3 +30,26 @@ eureka:
     service-url:
       defaultZone: http://${eureka.client.security.basic.username}:${eureka.client.security.basic.password}@localhost:8000/eureka
     registry-fetch-interval-seconds: 5 # 提高Client端拉取Server的注册信息的频率
+#
+#org:
+#  dromara:
+#    hmily:
+#      serializer: kryo
+#      recover-delay-time: 128
+#      retry-max: 30
+#      scheduled-delay: 128
+#      repository-support: db
+#      started: true
+#      hmily-db-config:
+#        driver-class-name: org.gjt.mm.mysql.Driver
+#        url: jdbc:mysql://127.0.0.1:3306/micro-cloud-consumer?autoReconnect=true&useSSL=false&useUnicode=true&characterEncoding=utf-8
+#        username: root
+#        password: root
+
+
+
+
+
+
+
+

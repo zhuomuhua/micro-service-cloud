@@ -18,6 +18,7 @@ import org.springframework.context.annotation.ComponentScan;
 @EnableHystrix
 @EnableFeignClients
 @EnableEurekaClient
+//@ComponentScan(basePackages = {"com.dabai.springcloud.consumer", "com.dabai.springcloud.core", "org.dromara.hmily"})
 @ComponentScan(basePackages = {"com.dabai.springcloud.consumer", "com.dabai.springcloud.core"})
 @SpringBootApplication
 public class MicroServiceConsumerApplication {

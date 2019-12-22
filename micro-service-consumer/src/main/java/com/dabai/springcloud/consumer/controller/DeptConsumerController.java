@@ -42,4 +42,6 @@ public class DeptConsumerController {
     public String update(@PathVariable String id, @PathVariable String name, @PathVariable Integer age) {
         return microUserService.update(id, name, age);
     }
+
+
 }

@@ -26,6 +26,7 @@
         <module>micro-service-admin-web</module>
         <module>micro-service-turbine</module>
         <module>micro-service-config</module>
+        <module>micro-service-gateway</module>
     </modules>
 
     <properties>
@@ -43,11 +44,6 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
         <!--注册中心-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

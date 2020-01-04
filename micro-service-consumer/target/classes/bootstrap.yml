@@ -9,9 +9,6 @@ spring:
       discovery:
         enabled: true
         service-id: micro-service-config
-  datasource:
-    druid:
-      name:
 
 server:
   port: 8005

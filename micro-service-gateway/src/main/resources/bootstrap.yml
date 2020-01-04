@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: micro-service-gateway
+  profiles:
+    active: dev
+  cloud:
+    config:
+      fail-fast: true
+      discovery:
+        enabled: true
+        service-id: micro-service-config
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: micro-service-provider
+          uri: lb://micro-service-provider
+          predicates:
+            - Path=/provider/**
+        - id: micro-service-consumer
+          uri: lb://micro-service-consumer
+          predicates:
+            - Path=/consumer/**
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: *
+
+server:
+  port: 8008
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 20
+    instance-id: micro-service-gateway
+  client:
+    security:
+      basic:
+        username: dabai
+        password: dabai2019
+    service-url:
+      defaultZone: http://${eureka.client.security.basic.username}:${eureka.client.security.basic.password}@localhost:8000/eureka
+    registry-fetch-interval-seconds: 5 # 提高Client端拉取Server的注册信息的频率

@@ -27,7 +27,8 @@ eureka:
     service-url:
       defaultZone: http://${eureka.client.security.basic.username}:${eureka.client.security.basic.password}@localhost:8000/eureka
     registry-fetch-interval-seconds: 5 # 提高Client端拉取Server的注册信息的频率
-#
+
+
 #org:
 #  dromara:
 #    hmily:
@@ -43,10 +44,5 @@ eureka:
 #        username: root
 #        password: root
 
-
-
-
-
-
-
-
+encrypt:
+  key: secret

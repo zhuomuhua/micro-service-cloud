@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.concurrent.atomic.AtomicLong;
+
 /**
  * @author zhuhaolin
  * @version 1.8.0
@@ -44,4 +46,15 @@ public class DeptConsumerController {
     }
 
 
+    public static void main(String[] args) {
+        AtomicLong atomicLong = new AtomicLong(0L);
+        long l = atomicLong.get();
+        System.out.println(l);
+        long l1 = atomicLong.addAndGet(1);
+        System.out.println(l1);
+        boolean b = atomicLong.compareAndSet(l1, l1 + 1);
+        System.out.println(b);
+        long l2 = atomicLong.get();
+        System.out.println(l2);
+    }
 }

@@ -10,9 +10,6 @@ spring:
         enabled: true
         service-id: micro-service-config
     gateway:
-      discovery:
-        locator:
-          enabled: true
       routes:
         - id: micro-service-provider
           uri: lb://micro-service-provider
@@ -22,10 +19,6 @@ spring:
           uri: lb://micro-service-consumer
           predicates:
             - Path=/consumer/**
-      globalcors:
-        corsConfigurations:
-          '[/**]':
-            allowedOrigins: *
 
 server:
   port: 8008
